@@ -1,8 +1,10 @@
 import React from 'react';
+import LandingLayout from './landing-layout';
 
 const Landing = () => {
   return (
     <>
+    <LandingLayout>
       <div
         className="hero min-h-screen"
         style={{
@@ -27,6 +29,7 @@ const Landing = () => {
               </div>
             </div>
       </div>
+      </LandingLayout>
     </>
   );
 };
