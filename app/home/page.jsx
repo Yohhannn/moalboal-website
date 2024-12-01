@@ -4,7 +4,7 @@ const Home = () => {
     <>
     <div className="bg-gray-100">
       {/* Hero Section */}
-      <div className="hero min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('home_assets/home_background.png')" }}>
+      <div className="hero min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('home_assets/home_newbg.svg')" }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-white">
           <div className="max-w-2xl">
