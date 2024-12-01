@@ -4,7 +4,7 @@ const Home = () => {
     <>
     <div className="bg-gray-100">
       {/* Hero Section */}
-      <div className="hero min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('home_assets/home_newbg.svg')" }}>
+      <div className="hero min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('home_assets/home_picbg.png')" }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-white">
           <div className="max-w-2xl">
@@ -53,7 +53,7 @@ const Home = () => {
               <p className="text-gray-600">Discover vibrant underwater wonders.</p>
             </div>
             <div className="card bg-white shadow-md p-6 rounded-lg">
-              <img src="home_assets/home_dive.svg" alt="Diving" className="rounded-lg mb-4" />
+              <img src="home_assets/home_dive.png" alt="Diving" className="rounded-lg mb-4" />
               <h3 className="text-xl font-bold mb-2">Diving</h3>
               <p className="text-gray-600">Dive into the colorful coral gardens.</p>
             </div>
