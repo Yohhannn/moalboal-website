@@ -4,8 +4,8 @@ const AboutUs = () => {
   const teamMembers = [
     {
       name: 'Joehanes Lauglaug',
-      role: 'Team Leader',
-      img: 'https://via.placeholder.com/150',
+      role: 'Project Manager',
+      img: 'about_assets/profile_joe.png',
       bio: 'Joehanes is the visionary leader of the Black Mavericks. With years of experience in programming, he ensures every project runs smoothly and efficiently.',
     },
     {
@@ -17,19 +17,19 @@ const AboutUs = () => {
     {
       name: 'Ian Jhon Dosdos',
       role: 'Layout Designer',
-      img: 'https://via.placeholder.com/150',
+      img: 'about_assets/profile_ian.png',
       bio: 'Ian Jhon is responsible for designing the layout and user interface of the website, ensuring a seamless and visually appealing experience for visitors.',
     },
     {
       name: 'Raymund Abella',
-      role: 'Local Expert',
-      img: 'https://via.placeholder.com/150',
-      bio: 'Raymund, as a local expert, shares his extensive knowledge about Moalboal’s culture, landmarks, and hidden gems to provide an authentic experience for tourists.',
+      role: 'Integration Analyst',
+      img: 'about_assets/chuychuy.jpg',
+      bio: 'Raymund, as an experienced integration specialist, excels at workflows by leveraging APIs and automation tools, ensuring seamless flow and operational efficiency.',
     },
     {
       name: 'Roberto Vender',
       role: 'Research Specialist',
-      img: 'https://via.placeholder.com/150',
+      img: 'about_assets/robert.png',
       bio: 'Roberto focuses on gathering data, researching trends, and ensuring that the information provided about Moalboal is accurate and up-to-date.',
     },
   ];
@@ -38,13 +38,16 @@ const AboutUs = () => {
   return (
     <div className="bg-gray-100">
       {/* Hero Section */}
-      <div className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center">
+      <div className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center bg-cover bg-center" style={{ backgroundImage: "url('about_assets/background_school.svg')" }}>
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold mb-4">About Us</h1>
+          <h1 className="text-4xl font-bold mb-4">About Our Team</h1>
           <p className="text-lg max-w-2xl mx-auto">
             We are a team of dedicated technologist students, passionate about showcasing the breathtaking beauty of Moalboal. Join us as we unveil the hidden treasures of this tropical paradise.
           </p>
         </div>
+      </div>
+      <div>
+        
       </div>
 
       {/* About the Black Mavericks */}
@@ -62,12 +65,44 @@ const AboutUs = () => {
                 <img src={member.img} alt={member.name} className="w-36 h-36 rounded-full mx-auto mb-4 object-cover border-solid border-2 border-white" />
                 <h3 className="text-xl font-bold">{member.name}</h3>
                 <p className=" font-semibold">{member.role}</p>
-                <p className=" mt-4">{member.bio}</p>
+                <p className=" mt-4 text-md">{member.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <section className="bg-gray-100 py-10 px-6">
+      <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+        {/* Left: Image */}
+        <div className="md:w-1/2">
+          <img
+            src="about_assets/school_img.svg" 
+            alt="School"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        {/* Right: Text and Logo */}
+        <div className="md:w-1/2 p-6 md:p-10">
+          <div className="flex items-center mb-4">
+            <img
+              src="about_assets/ctulogoicon.png" 
+              alt="School Logo"
+              className="w-16 h-16 object-contain mr-4"
+            />
+            <h2 className="text-2xl font-bold text-white">
+              CEBU TECHNOLOGICAL UNIVERSITY - <i>MAIN</i>
+            </h2>
+          </div>
+          <p className="text-white text-md leading-relaxed">
+            CTU-Main is a premier institution dedicated to fostering
+            innovation, creativity, and excellence. Our students are inspired
+            to apply their skills to showcase the beauty of Moalboal and beyond.
+          </p>
+        </div>
+      </div>
+    </section>
 
       {/* Footer */}
       <footer className="bg-gray-800 py-6 text-white text-center">
