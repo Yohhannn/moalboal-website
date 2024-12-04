@@ -21,12 +21,12 @@ const Header = () => {
                 Home
               </a>
             </li>
-            {/* Team */}
-            <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
-              <a href="/about" className="flex flex-col items-center">
+                {/* About The Place */}
+                <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
+              <a href="/aboutUs" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_team.svg" alt="team" /></div>
-                Team
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="about_assets/about_icon_tag_place.svg" alt="aboutUS" /></div>
+                About
               </a>
             </li>
             {/* Places */}
@@ -50,7 +50,7 @@ const Header = () => {
               <a href="/festivals" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
                 <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_festival.svg" alt="festival" /></div>
-                Festivals
+                Events
               </a>
             </li>
             {/* Contact */}
