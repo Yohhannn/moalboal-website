@@ -81,11 +81,6 @@ const Home = () => {
           <button className="btn btn-outline bg-white px-8 py-3 text-lg">Contact Us</button>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 py-6 text-white text-center">
-        <p>&copy; 2024 Moalboal Tourism. All Rights Reserved.</p>
-      </footer>
     </div>
     </>
   )
