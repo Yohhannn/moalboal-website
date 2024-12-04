@@ -55,7 +55,7 @@ const Header = () => {
             </li>
             {/* Contact */}
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
-              <a href="/contact" className="flex flex-col items-center">
+              <a href="/contacts" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
                 <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_contact.svg" alt="contact" /></div>
                 Contact
