@@ -61,7 +61,7 @@ const Food = () => {
           <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
             <img src="/cuisine_assets/cheesy_burger.jpg" className='w-full h-40 sm:h-48 object-cover' alt="Cheesy Burger" />
             <div className='p-4'>
-              <span className='font-bold'>Name of the dish</span>
+              <span className='font-bold'>Burger</span>
               <span className='block'>Restaurant</span>
             </div>
           </div> 
