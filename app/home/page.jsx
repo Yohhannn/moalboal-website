@@ -72,13 +72,18 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Plan Your Trip</h2>
-          <p className="max-w-2xl mx-auto mb-6">
-            Get in touch with us to plan your dream vacation in Moalboal. Let us help you create unforgettable memories.
+      <section className="py-16 bg-gray-700 text-white text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Plan Your Trip</h2>
+          <p className="text-lg mb-8">
+          Get in touch with us to plan your dream vacation in Moalboal. Let us help you create unforgettable memories.
           </p>
-          <button className="btn btn-outline bg-white px-8 py-3 text-lg">Contact Us</button>
+          <a
+            href="/contacts"
+            className="bg-white text-black px-8 py-3 rounded-btn hover:bg-gray-800 hover:text-white transition duration-200"
+          >
+            Contact Us
+          </a>
         </div>
       </section>
     </div>
