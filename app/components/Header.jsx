@@ -47,7 +47,7 @@ const Header = () => {
             </li>
             {/* Festivals */}
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
-              <a href="/festivals" className="flex flex-col items-center">
+              <a href="/events" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
                 <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/header_assets/i_festival.svg" alt="festival" /></div>
                 Events
