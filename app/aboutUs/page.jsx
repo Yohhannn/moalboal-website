@@ -27,17 +27,18 @@ const AboutMoalboal = () => {
         style={{ backgroundImage: "url('about_assets/municipal.png')" }}
       >
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Moalboal</h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto">
-            A picturesque coastal town in Cebu, Moalboal is known for its natural beauty, rich culture, and vibrant community. Discover its history and charm.
+          <h1 className="text-4xl font-bold mb-4">About Moalboal</h1>
+          <p className="text-lg max-w-3xl mx-auto">
+          Experience the natural beauty and rich culture of Moalboal!
           </p>
         </div>
       </div>
 
+      <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
       {/* About Moalboal Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">The Municipality of Moalboal</h2>
+          <h2 className="text-3xl font-bold mb-6">The Municipality of Moalboal</h2>
           <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-10">
             Nestled on the southwestern coast of Cebu, Moalboal is a haven for travelers seeking stunning landscapes and vibrant underwater life. With its warm, welcoming community and rich cultural traditions, it stands as one of the province's crown jewels.
           </p>
@@ -47,7 +48,7 @@ const AboutMoalboal = () => {
             {facts.map((fact, index) => (
               <div
                 key={index}
-                className="card bg-white shadow-lg rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 hover:text-white"
+                className="card bg-white shadow-lg rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 hover:text-white transform hover:scale-105"
               >
                 <h3 className="text-xl font-bold">{fact.title}</h3>
                 <p className="mt-4">{fact.description}</p>
@@ -60,12 +61,12 @@ const AboutMoalboal = () => {
       {/* Cultural Heritage Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Cultural Heritage</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Cultural Heritage</h2>
           <p className="text-gray-600 text-center text-base md:text-lg max-w-3xl mx-auto mb-10">
             Moalboal takes pride in its cultural heritage. From vibrant festivals like the Kagasangan Festival to traditional Cebuano practices, the town's culture is alive and thriving.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="card bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
               <figure>
                 <img
                   src="about_assets/about_dance.png"
@@ -81,7 +82,7 @@ const AboutMoalboal = () => {
               </div>
             </div>
             
-            <div className="card bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
               <figure>
                 <img
                   src="about_assets/community.png"
@@ -133,7 +134,7 @@ const AboutMoalboal = () => {
       {/* Map Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Location of Moalboal</h2>
+          <h2 className="text-3xl font-bold mb-6">Location of Moalboal</h2>
           <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-6">
             Moalboal is located on the southwestern coast of Cebu Island in the Philippines. It is approximately 89 kilometers (55 miles) from Cebu City, accessible via a scenic drive.
           </p>
@@ -151,6 +152,7 @@ const AboutMoalboal = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

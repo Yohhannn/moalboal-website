@@ -22,14 +22,14 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex flex-row gap-4 mt-4 md:mt-0">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">
-            <img src="/footer_assets/facebook.svg" alt="Facebook" className="w-5 h-5" />
+          <a href="https://www.facebook.com/lgumoalboal" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">
+            <img src="footer_assets/facebook.svg" alt="Facebook" className="w-5 h-5" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">
-            <img src="/footer_assets/twitter.svg" alt="Twitter" className="w-5 h-5" />
+            <img src="footer_assets/twitter.svg" alt="Twitter" className="w-5 h-5" />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">
-            <img src="/footer_assets/instagram.svg" alt="Instagram" className="w-5 h-5" />
+            <img src="footer_assets/instagram.svg" alt="Instagram" className="w-5 h-5" />
           </a>
         </div>
       </div>
