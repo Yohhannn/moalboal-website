@@ -1,266 +1,179 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Carousel from "./Carousel";
+import React, { useState, useEffect } from "react";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
+import PopularCuisineSlider from "./PopularCuisineSlider";
+import PopularRestoSlider from "./PopularRestoSlider";
 
-
-const Food = () => {
+const MoalboalPage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show or hide the scroll-to-top button based on scroll position
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  // Scroll to the top of the page
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const moalboalCuisines = [
+    {
+      name: "Grilled Tuna Belly",
+      image: "https://i0.wp.com/www.angsarap.net/wp-content/uploads/2021/09/Inihaw-na-Tuna-Belly-Wide.jpg?ssl=1",
+      description: "Freshly caught tuna belly grilled to perfection, a local delicacy.",
+    },
+    {
+      name: "Smoothie Bowl",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/8f/be/40/the-bowl-spread.jpg?w=1200&h=-1&s=1",
+      description: "A tropical smoothie bowl topped with granola and coconut flakes",
+    },
+    {
+      name: "Sizzling Pork Sisig",
+      image: "https://media.istockphoto.com/id/623516426/photo/sizzling-pork-sisig-filipino-cuisine.jpg?s=612x612&w=0&k=20&c=YBzuT9vYE840ernm8cQjL3ulmMWmYbrno9w-nCNowOw=",
+      description: "A sizzling hot plate of pork sisig, a Filipino favorite.",
+    },
+    {
+      name: "Puto Maya",
+      image: "https://www.vozzog.com/images/resto/l_e65bd_puto_maya.jpg",
+      description: "A traditional sticky rice snack served with ripe mangoes and cocoa.",
+    },
+    {
+      name: "Moalboal BBQ",
+      image: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2024/07/29/filipino_pork_barbecue_H_f.jpg.rend.hgtvcom.616.462.suffix/1722282926501.webp",
+      description: "Succulent grilled meats served on sticks, a popular street food.",
+    },
+    {
+      name: "Pancit Canton",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pancit_Ilonggo_Style_-_12110747826.jpg/1100px-Pancit_Ilonggo_Style_-_12110747826.jpg",
+      description: "Stir-fried noodles with vegetables, meat, and seafood.",
+    },
+  ];
+
+  const moalboalResto = [
+    {
+      name: "Ven'z Kitchen",
+      link: "/cuisine-resto1",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/c8/10/0f/with-rita-and-sven.jpg?w=800&h=400&s=1",
+      description:
+        "Known for its home-cooked Filipino meals and warm hospitality, Ven'z Kitchen is a favorite spot for locals and tourists alike.",
+    },
+    {
+      name: "Lantaw Restaurant",
+      link: "/cuisine-resto2",
+      image: "https://www.phtourguide.com/wp-content/uploads/2012/11/Lantaw-Floating-Native-Restaurant.jpg",
+      description:
+        "Enjoy stunning ocean views paired with a variety of Filipino and seafood dishes at this scenic restaurant.",
+    },
+    {
+      name: "The Three Bears",
+      link: "/cuisine-resto3",
+      image: "https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL01VREgySzlyUkZtQ2tCR25PbFU2c0EiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0=",
+      description:
+        "A family-friendly café offering hearty breakfast options, pastries, and coffee to kickstart your Moalboal adventure.",
+    },
+    {
+      name: "Blue Abyss Dive Resort Restaurant",
+      link: "/cuisine-resto4",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/0d/9a/9d/the-blue-abyss-dive-resort.jpg?w=700&h=-1&s=1",
+      description:
+        "Perfect for divers, this spot serves a range of dishes with a focus on fresh, local ingredients and a relaxing vibe.",
+    },
+    {
+        name: "The Pleasure Principle Resto-Bar",
+        link: "/cuisine-resto5",
+        image: "https://cebutrip.net/files/becf099243979b0fca369a059fd0a1bf.jpg",
+        description:
+          "A cozy spot offering a mix of international and local dishes, along with refreshing cocktails and beachside ambiance.",
+      },
+    {
+      name: "Hungry Monkeys Restaurant",
+      link: "/cuisine-resto6",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/50/49/58/your-view-upstairs.jpg?w=900&h=500&s=1",
+      description:
+        "A quirky bar and grill serving delicious barbecue and signature cocktails, making it a must-visit for food and fun.",
+    },
+    {
+        name: "Kugita Seafood & Charcoal Grill",
+        link: "/cuisine-resto7",
+        image: "https://www.nopostcode.com/wp-content/uploads/2021/01/Kugita-Moalboal-4-1024x682.jpg",
+        description:
+          "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies. ",
+      },
+      {
+        name: "Shaka",
+        link: "/cuisine-resto8",
+        image: "https://images.happycow.net/venues/1024/15/17/hcmp151750_2307523.jpeg",
+        description:
+          " A tropical haven offering fresh, healthy bowls, smoothies, and signature dishes with a laid-back island vibe.",
+      },
+        {
+        name: "Besty's Grill and Resto Bar",
+        link: "/cuisine-resto9",
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/1a/02/16/d4/dining-area.jpg",
+        description:
+          "A cozy beachfront restaurant offering a mix of flavorful Filipino dishes and international favorites. ",
+      },
+  ];
+
   return (
-    <div className="bg-gray-200">
-    <div className='mx-12  pt-8 lg:mx-24 lg:pt-0 min-h-screen' >
-      {/*wrapper*/}
-      <div className='mb-16 pt-10'>
-        <h1 className='pb-4 font-bold text-3xl'>FOOD|CULTURE</h1>
-        <div> {/*carousel*/}
-          <Carousel />
+    <div className="bg-gray-50 min-h-screen">
+      {/* Header Section */}
+      <header
+        className="bg-gray-700 text-white py-24 bg-cover bg-center"
+        style={{ backgroundImage: "url('cuisine_assets/cuisine_bg.png')" }}
+      >
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl font-bold">Food & Cuisine of Moalboal</h1>
+          <p className="mt-4 text-lg">Savor the rich flavors and culinary delights of Moalboal!</p>
+        </div>
+      </header>
+
+      <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
+
+      {/* Food Moalboal Cuisine Grid */}
+      <div className="mx-6 lg:mx-24 py-12">
+        <h2 className="text-3xl font-bold text-center mb-8">Local Delicacies of Moalboal</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {moalboalCuisines.map((cuisine, idx) => (
+            <div
+              key={idx}
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
+            >
+              <img
+                src={cuisine.image}
+                alt={cuisine.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">{cuisine.name}</h3>
+                <p className="text-gray-600 text-sm">{cuisine.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <div> 
-        <h2 className='pb-2 mt-12 border-b border-gray-300 font-bold text-2xl'>Popular Cuisines</h2>
-        <div className='mt-8 grid lg:grid-cols-3 gap-8'>
-          {/*cards*/}
-          <div className='bg-white rounded overflow-hidden shadow-md  hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/pork_guisado.jpg" className='w-full h-48 sm:h-48 object-cover' alt="Pork Guisado" />
-            <div className='p-4'>
-              <span className='font-bold'>Pork Guisado</span>
-              <span className='block'>Tan-aw Restaurant</span>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/smoothie.jpg" className='w-full h-40 sm:h-48 object-cover' alt="Smoothie" />
-            <div className='p-4'>
-              <span className='font-bold'>Bom Dia</span>
-              <span className='block'>Shaka</span>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/cheesy_burger.jpg" className='w-full h-40 sm:h-48 object-cover' alt="Cheesy Burger" />
-            <div className='p-4'>
-              <span className='font-bold'>Burger</span>
-              <span className='block'>Restaurant</span>
-            </div>
-          </div> 
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/pork_sisig.jpg" className='w-full h-40 sm:h-48 object-cover' alt="Pork Sisig" />
-            <div className='p-4'>
-              <span className='font-bold'>Sizzling Pork Sisig</span>
-              <span className='block'>Ven's Kitchen</span>
-            </div>
-          </div> 
-          
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/bbq.jpg" className='w-full h-40 sm:h-48 object-cover' alt="BBQ" />
-            <div className='p-4'>
-              <span className='font-bold'>BBQ</span>
-              <span className='block'>Street Food</span>
-            </div>
-          </div> 
-        </div>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-10">Local Favorites</h2>
+      <PopularCuisineSlider/>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-20">Popular Local Restaurants</h2>
+      <PopularRestoSlider/>
       </div>
 
-      <div > 
-        <h4 className='pb-2 mt-16 border-b border-gray-300 font-bold text-2xl'>Recommended Dining Spots</h4>
-        <div className='mt-8 pb-8 grid lg:grid-cols-3 gap-8'>
-          {/*cards*/}
-          <div className='bg-white rounded overflow-hidden shadow-md  hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Tan-aw Restaurant.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Tan-aw Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>Tan-aw Restaurant</span>
-              <a href="https://www.neptunediving.com/tan-aw-restaurant-moalboal/" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md  hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Hungry Monkey Restaurant.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Hungry Monkeys Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>Hungry Monkeys Restaurant</span>
-              <a href="https://web.facebook.com/hungrymonkeysmoalboal/?_rdc=1&_rdr#" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/ven-z-kitchen.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Vin'z Kitchen" />
-            <div className='p-4'>
-              <span className='font-bold'>Vin'z Kitchen</span>
-              <a href="https://web.facebook.com/venzkitchen/?_rdc=1&_rdr#" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Daily Sweet.png" className='w-full h-52 sm:h-52 object-cover' alt="Daily Sweet Snow Ice Shop" />
-            <div className='p-4'>
-              <span className='font-bold'>Daily Sweet Snow Ice Shop</span>
-              <a href="https://web.facebook.com/dailysweetmoalboal" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Shaka.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Shaka" />
-            <div className='p-4'>
-              <span className='font-bold'>Shaka</span>
-              <a href="https://web.facebook.com/shaka.cafes" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Kugita.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Kugita Seafood & Charcoal Grill" />
-            <div className='p-4'>
-              <span className='font-bold'>Kugita Seafood & Charcoal Grill</span>
-              <a href="https://web.facebook.com/kugitamoalboal" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/last-filling-station.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Last Filling Station" />
-            <div className='p-4'>
-              <span className='font-bold'>Last Filling Station</span>
-              <a href="https://www.tipoloresort.com/restaurant/" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/siptea bar.jpg" className='w-full h-52 sm:h-52 object-cover' alt="SipTea Bar & Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>SipTea Bar & Restaurant</span>
-              <a href="https://web.facebook.com/SipTeaBar" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/el mercado de moalboal.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Moalboal Food Court" />
-            <div className='p-4'>
-              <span className='font-bold'>El Mercado de Moalboal</span>
-              <a href="https://web.facebook.com/profile.php/?id=100094018757570&_rdc=1&_rdr" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h5 className="pb-2 mt-16 border-b border-gray-300 font-bold text-2xl">Local Eats</h5>
-        <div className='mt-8 pb-8 grid lg:grid-cols-3 gap-8'>
-          {/*cards*/}
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Tan-aw Restaurant.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Tan-aw Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>Tan-aw Restaurant</span>
-              <a href="https://www.neptunediving.com/tan-aw-restaurant-moalboal/" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Hungry Monkey Restaurant.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Hungry Monkeys Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>Hungry Monkeys Restaurant</span>
-              <a href="https://web.facebook.com/hungrymonkeysmoalboal/?_rdc=1&_rdr#" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/ven-z-kitchen.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Vin'z Kitchen" />
-            <div className='p-4'>
-              <span className='font-bold'>Vin'z Kitchen</span>
-              <a href="https://web.facebook.com/venzkitchen/?_rdc=1&_rdr#" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/last-filling-station.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Last Filling Station" />
-            <div className='p-4'>
-              <span className='font-bold'>Last Filling Station</span>
-              <a href="https://www.tipoloresort.com/restaurant/" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/siptea bar.jpg" className='w-full h-52 sm:h-52 object-cover' alt="SipTea Bar & Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>SipTea Bar & Restaurant</span>
-              <a href="https://web.facebook.com/SipTeaBar" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/el mercado de moalboal.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Moalboal Food Court" />
-            <div className='p-4'>
-              <span className='font-bold'>El Mercado de Moalboal</span>
-              <a href="https://web.facebook.com/profile.php/?id=100094018757570&_rdc=1&_rdr" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h6 className="pb-2 mt-16 border-b border-gray-300 font-bold text-2xl">Budget-friendly</h6>
-        <div className='mt-8 pb-8 grid lg:grid-cols-3 gap-8'>
-          {/*cards*/}
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Tan-aw Restaurant.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Tan-aw Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>Tan-aw Restaurant</span>
-              <a href="https://www.neptunediving.com/tan-aw-restaurant-moalboal/" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Kugita.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Kugita Seafood & Charcoal Grill" />
-            <div className='p-4'>
-              <span className='font-bold'>Kugita Seafood & Charcoal Grill</span>
-              <a href="https://web.facebook.com/kugitamoalboal" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/Shaka.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Shaka" />
-            <div className='p-4'>
-              <span className='font-bold'>Shaka</span>
-              <a href="https://web.facebook.com/shaka.cafes" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/last-filling-station.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Last Filling Station" />
-            <div className='p-4'>
-              <span className='font-bold'>Last Filling Station</span>
-              <a href="https://www.tipoloresort.com/restaurant/" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/siptea bar.jpg" className='w-full h-52 sm:h-52 object-cover' alt="SipTea Bar & Restaurant" />
-            <div className='p-4'>
-              <span className='font-bold'>SipTea Bar & Restaurant</span>
-              <a href="https://web.facebook.com/SipTeaBar" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-          <div className='bg-white rounded overflow-hidden shadow-md hover:translate-y-[-8px] hover:shadow-lg transition-transform duration-300'>
-            <img src="/cuisine_assets/el mercado de moalboal.jpg" className='w-full h-52 sm:h-52 object-cover' alt="Moalboal Food Court" />
-            <div className='p-4'>
-              <span className='font-bold'>El Mercado de Moalboal</span>
-              <a href="https://web.facebook.com/profile.php/?id=100094018757570&_rdc=1&_rdr" className="block text-blue-700">Click here to visit their website</a>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* Scroll-to-Top Button */}
       {isVisible && (
-          <button
+        <button
           onClick={scrollToTop}
-          className="fixed bottom-16 right-2 lg:right-6 p-2 rounded-full bg-blue-800 hover:bg-blue-900 text-white shadow-md transition duration-300"
+          className="z-10 fixed bottom-16 right-6 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
         >
-          <ChevronUpIcon className="h-5 w-5 lg:h-6 lg:w-6" />
+          <ChevronUpIcon className="h-6 w-6" />
         </button>
-        )}
-    </div>  
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Food
+export default MoalboalPage;

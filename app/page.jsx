@@ -61,9 +61,11 @@ const Landing = () => {
                   vibrant coral reefs, and the famous sardine run. Dive into
                   adventure or relax by the serene shores—Moalboal has it all.
                 </p>
+                <a href="/home">
                 <button className="btn bg-gray-100 hover:text-white font-semibold text-md hover:bg-slate-800">
-                  <a href="/home">Get Started ➤</a>
+                  Get Started ➤
                 </button>
+                </a>
               </div>
             </div>
       </div>

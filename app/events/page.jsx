@@ -11,7 +11,7 @@ const EventsPage = () => {
         </div>
       </header>
 
-      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-6">
+      <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
         {/* Featured Events Section */}
 <section className="py-16 bg-white">
   <div className="container mx-auto">

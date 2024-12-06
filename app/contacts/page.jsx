@@ -4,15 +4,16 @@ const ContactUs = () => {
   return (
     <div className="bg-gray-100">
       {/* Hero Section */}
-      <section className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center bg-cover bg-center" style={{ backgroundImage: "url('contact_assets/contact_us_bg1.png')" }}>
+      <section className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center bg-cover bg-center" style={{ backgroundImage: "url('contact_assets/contact_usbg2.png')" }}>
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg max-w-2xl mx-auto">
-            We’d love to hear from you!<br></br> Reach out with your questions, feedback, or inquiries.
+            We’d love to hear from you! Reach out with your questions, feedback, or inquiries.
           </p>
         </div>
       </section>
 
+      <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
       {/* Contact Section */}
       <section className="py-12 px-6 bg-white">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -98,6 +99,7 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };
