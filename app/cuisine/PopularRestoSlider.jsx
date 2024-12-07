@@ -55,7 +55,7 @@ const PopularRestoSlider = () => {
       link: "/cuisine-resto7",
       image: "https://www.nopostcode.com/wp-content/uploads/2021/01/Kugita-Moalboal-4-1024x682.jpg",
       description:
-        "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies, offering a delightful dining experience.",
+        "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies, offering a delightful experience.",
     },
     {
       name: "Shaka",
@@ -120,7 +120,7 @@ const PopularRestoSlider = () => {
         >
           {moalboalResto.map((place, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 md:mb-8 md:h-[550px]">
+              <div className="bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 md:mb-8">
                 <img
                   src={place.image}
                   alt={place.name}

@@ -6,62 +6,22 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/cuisine/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/cuisine/page.css",
-      "static/chunks/app/cuisine/page.js"
-    ],
-    "/cuisine-resto2/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto2/page.js"
-    ],
-    "/cuisine-resto3/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto3/page.js"
-    ],
-    "/cuisine-resto1/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto1/page.js"
-    ],
-    "/cuisine-resto4/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto4/page.js"
-    ],
-    "/cuisine-resto6/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto6/page.js"
-    ],
-    "/cuisine-resto7/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto7/page.js"
-    ],
-    "/cuisine-resto5/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto5/page.js"
-    ],
-    "/home/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/home/page.js"
-    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/cuisine-resto8/page": [
+    "/home/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/cuisine-resto8/page.js"
+      "static/chunks/app/home/page.js"
+    ],
+    "/cuisine/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/cuisine/page.css",
+      "static/chunks/app/cuisine/page.js"
     ]
   }
 }
