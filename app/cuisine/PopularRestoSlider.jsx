@@ -134,7 +134,7 @@ const PopularRestoSlider = () => {
                   )}
                   < a
                   href={place.link}
-                  className="bg-gray-700 text-white p-3 md:px-4 md:py-4 w-full hover:bg-gray-100 hover:text-black transition duration-200 mt-2 inline-block text-center"
+                  className="bg-gray-700 text-white p-3 md:px-4 md:py-4 w-full hover:bg-gray-100 hover:text-black transition duration-200 md:mt-2 inline-block text-center"
                   >
                   View More
                   </a>
