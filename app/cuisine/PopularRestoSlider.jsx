@@ -16,11 +16,11 @@ const PopularRestoSlider = () => {
         "Known for its home-cooked Filipino meals and warm hospitality, Ven'z Kitchen is a favorite spot for locals and tourists alike.",
     },
     {
-      name: "Lantaw Restaurant",
+      name: "Tan-aw Restaurant",
       link: "/cuisine-resto2",
       image: "https://www.phtourguide.com/wp-content/uploads/2012/11/Lantaw-Floating-Native-Restaurant.jpg",
       description:
-        "Enjoy stunning ocean views paired with a variety of Filipino and seafood dishes at this scenic restaurant.",
+        "Enjoy stunning ocean views paired with a variety of delicious Filipino and seafood dishes at this scenic restaurant.",
     },
     {
       name: "The Three Bears",
@@ -34,7 +34,7 @@ const PopularRestoSlider = () => {
       link: "/cuisine-resto4",
       image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/0d/9a/9d/the-blue-abyss-dive-resort.jpg?w=700&h=-1&s=1",
       description:
-        "Perfect for divers, this spot serves a range of dishes with a focus on fresh, local ingredients and a relaxing vibe.",
+        "Perfect for divers, this spot serves a range of delicious dishes with a focus on fresh, local ingredients and a relaxing, inviting vibe.",
     },
     {
       name: "The Pleasure Principle Resto-Bar",
@@ -48,14 +48,14 @@ const PopularRestoSlider = () => {
       link: "/cuisine-resto6",
       image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/50/49/58/your-view-upstairs.jpg?w=900&h=500&s=1",
       description:
-        "A quirky bar and grill serving delicious barbecue and signature cocktails, making it a must-visit for food and fun.",
+        "A cozy spot offering a delightful mix of international and local dishes, along with refreshing cocktails and beachside ambiance.",
     },
     {
       name: "Kugita Seafood & Charcoal Grill",
       link: "/cuisine-resto7",
       image: "https://www.nopostcode.com/wp-content/uploads/2021/01/Kugita-Moalboal-4-1024x682.jpg",
       description:
-        "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies.",
+        "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies, offering a delightful dining experience.",
     },
     {
       name: "Shaka",
@@ -65,11 +65,11 @@ const PopularRestoSlider = () => {
         "A tropical haven offering fresh, healthy bowls, smoothies, and signature dishes with a laid-back island vibe.",
     },
     {
-      name: "Besty's Grill and Resto Bar",
+      name: "Betsy's Grill and Resto Bar",
       link: "/cuisine-resto9",
       image: "https://media-cdn.tripadvisor.com/media/photo-s/1a/02/16/d4/dining-area.jpg",
       description:
-        "A cozy beachfront restaurant offering a mix of flavorful Filipino dishes and international favorites.",
+        "A quirky bar and grill serving delicious barbecue and signature cocktails, making it a must-visit for food and fun.",
     },
   ];
 
@@ -89,7 +89,7 @@ const PopularRestoSlider = () => {
   }, []);
 
   return (
-    <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
+    <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white rounded-lg p-6">
       <div className="relative w-full h-auto">
         <Swiper
           ref={swiperRef}
@@ -103,16 +103,16 @@ const PopularRestoSlider = () => {
               spaceBetween: 6,
             },
             500: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 12,
             },
             1000: {
               slidesPerView: 2,
-              spaceBetween: 15,
+              spaceBetween: 20,
             },
             1200: {
-              slidesPerView: 2,
-              spaceBetween: 15,
+              slidesPerView:3,
+              spaceBetween: 24,
             },
           }}
           freeMode={isMobile}
@@ -120,23 +120,25 @@ const PopularRestoSlider = () => {
         >
           {moalboalResto.map((place, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 mb-10 md:mb-12">
+              <div className="bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 md:mb-8 md:h-[550px]">
                 <img
                   src={place.image}
                   alt={place.name}
-                  className="w-full h-96 object-cover px-6 py-5"  
+                  className="w-full h-72 md:h-96 object-cover"  
                 />
-
-                <div className="p-6"> {/* Increased padding */}
-                  <h3 className="text-xl font-semibold mb-2">{place.name}</h3>
-                  <p className="text-gray-600 text-sm">{place.description}</p>
-                  <a
-                    href={place.link}
-                    className="bg-gray-700 text-white px-4 py-4 rounded-lg w-full hover:bg-gray-100 hover:text-black transition duration-200 mt-4 inline-block text-center"
+                
+                  <div className=""> 
+                  <h3 className="text-[15px] flex md:justify-start justify-center md:text-xl font-bold py-2 md:font-semibold px-4">{place.name}</h3>
+                  {!isMobile && (
+                    <p className="text-gray-600 text-sm px-4">{place.description}</p>
+                  )}
+                  < a
+                  href={place.link}
+                  className="bg-gray-700 text-white p-3 md:px-4 md:py-4 w-full hover:bg-gray-100 hover:text-black transition duration-200 mt-2 inline-block text-center"
                   >
-                    View More.
+                  View More
                   </a>
-                </div>
+                  </div>
               </div>
             </SwiperSlide>
           ))}
