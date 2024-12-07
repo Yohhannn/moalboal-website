@@ -17,7 +17,7 @@ const Header = () => {
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
               <a href="/home" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_home1.svg" alt="home style" /></div>
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/header_assets/i_home1.svg" alt="home style" /></div>
                 Home
               </a>
             </li>
@@ -25,7 +25,7 @@ const Header = () => {
                 <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
               <a href="/aboutUs" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="about_assets/about_icon_tag_place.svg" alt="aboutUS" /></div>
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/about_assets/about_icon_tag_place.svg" alt="aboutUS" /></div>
                 About
               </a>
             </li>
@@ -33,7 +33,7 @@ const Header = () => {
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
               <a href="/places" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_place.svg" alt="places" /></div>
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/header_assets/i_place.svg" alt="places" /></div>
                 Places
               </a>
             </li>
@@ -41,7 +41,7 @@ const Header = () => {
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
               <a href="/cuisine" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_cuisine.svg" alt="food" /></div>
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/header_assets/i_cuisine.svg" alt="food" /></div>
                 Cuisine
               </a>
             </li>
@@ -49,7 +49,7 @@ const Header = () => {
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
               <a href="/events" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_festival.svg" alt="festival" /></div>
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/header_assets/i_festival.svg" alt="festival" /></div>
                 Events
               </a>
             </li>
@@ -57,7 +57,7 @@ const Header = () => {
             <li className="flex flex-col items-center text-sm hover:text-yellow-400 transition">
               <a href="/contacts" className="flex flex-col items-center">
                 {/* Placeholder Icon */}
-                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="header_assets/i_contact.svg" alt="contact" /></div>
+                <div className="w-6 h-6 bg-gray- rounded-full mb-1"><img src="/header_assets/i_contact.svg" alt="contact" /></div>
                 Contact
               </a>
             </li>
