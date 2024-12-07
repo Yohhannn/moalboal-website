@@ -34,7 +34,7 @@ const EventsPage = () => {
           </p>
           <a
             href="/event-sardine-run"
-            className="bg-gray-700 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-white hover:text-black transition duration-200 mt-4 inline-block"
+            className="bg-gray-700 text-white px-4 py-2 rounded-lg w-auto text-center hover:bg-white hover:text-black transition duration-200 mt-4 inline-block"
           >
             Learn More
           </a>
@@ -57,7 +57,7 @@ const EventsPage = () => {
           </p>
           <a
             href="/event-kagasangan-festival"
-            className="bg-gray-700 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-white hover:text-black transition duration-200 mt-4 inline-block"
+            className="bg-gray-700 text-white px-4 py-2 rounded-lg w-auto text-center hover:bg-white hover:text-black transition duration-200 mt-4 inline-block"
           >
             Learn More
           </a>
@@ -80,7 +80,7 @@ const EventsPage = () => {
           </p>
           <a
             href="/event-sinulog-sa-kabataan"
-            className="bg-gray-700 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-white hover:text-black transition duration-200 mt-4 inline-block"
+            className="bg-gray-700 text-white px-4 py-2 rounded-lg w-auto text-center hover:bg-white hover:text-black transition duration-200 mt-4 inline-block"
           >
             Learn More
           </a>
