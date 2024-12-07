@@ -1,435 +1,125 @@
 "use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Autoplay, Navigation, Pagination } from "swiper"; 
-import Link from "next/link";
 
+import React, { useState, useEffect } from "react";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
+import PopularAttractionsSlider from "./PopularAttractionsSlider";
 
+const MoalboalPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
-const Slideshow = () => {
-  const [rowsToShow, setRowsToShow] = useState(1);
-  const [viewingMoreIndexes, setViewingMoreIndexes] = useState([]); // Track which attractions are being viewed
-  const [hoveredIndexes, setHoveredIndexes] = useState([]); // Track hover state for individual attractions
-  const [expandedIndex, setExpandedIndex] = useState(null); // Track expanded container
+  useEffect(() => {
+    const toggleVisibility = () => {
+      setIsVisible(window.scrollY > 300);
+    };
 
-  const attractions = [
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const moalboalAttractions = [
     {
-      title: "Pescador Island",
-      description:
-        "Pescador Island is known for its vibrant coral reefs and rich marine biodiversity, making it a favorite spot for snorkeling and diving.",
-      images: [
-        "/attractions_assets/pescador/pescadorATT1.png",
-        "/attractions_assets/pescador/pescadorATT2.jpg",
-        "/attractions_assets/pescador/pescadorATT3.jpg",
-      ],
-      link: "/places/attractions/pescador",
+      name: "Kawasan Falls",
+      image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Kawasan_Falls%2C_Cebu%2C_Philippines1.jpg",
+      description: "A stunning multi-tiered waterfall, perfect for canyoneering and swimming.",
+      link: '/place-info1'
     },
     {
-      title: "Panagsama Beach",
-      description:
-        "Panagsama Beach offers stunning views, crystal-clear waters, and is a gateway to exploring nearby dive spots and marine sanctuaries.",
-      images: [
-        "/attractions_assets/panagsama/panagsamaATT1.png",
-        "/attractions_assets/panagsama/panagsamaATT2.jpg",
-        "/attractions_assets/panagsama/panagsamaATT3.jpg",
-      ],
-      link: "/places/attractions/panagsama",
+      name: "Basdaku White Beach",
+      image: "https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-6/326359829_1106655963361676_1593013567255363893_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHI228Ztjo8hUCEKpjBSw5eXp8Ug2il1HdenxSDaKXUd71kMxDSmDckNFtwr1lhXwKxZst5FjNFP4uj19AS8kwp&_nc_ohc=KnH03L59LWQQ7kNvgGsyq5H&_nc_zt=23&_nc_ht=scontent.fmnl9-4.fna&_nc_gid=AD6Y6tqB0dKo-_TJYOslgYZ&oh=00_AYA0RomfG97Gf0C0yddA0ySDXUIabXvYtOhiZ8ZT7Gx9LA&oe=6759F036",
+      description: "A pristine beach offering crystal-clear waters, ideal for sunbathing and swimming.",
+      link: '/place-info2'
     },
     {
-      title: "Tison Canyon",
-      description:
-        "Tison Canyon is a breathtaking destination with towering cliffs, lush greenery, and serene hiking trails for nature enthusiasts.",
-      images: [
-        "/attractions_assets/tison/tisonATT1.png",
-        "/attractions_assets/tison/tisonATT2.jpg",
-        "/attractions_assets/tison/tisonATT3.jpg",
-      ],
-      link: "/places/attractions/tison",
+      name: "Pescador Island",
+      image: "https://gttp.images.tshiftcdn.com/198522/x/0/pescador-island.jpg",
+      description: "A popular diving spot, home to diverse marine life and clear blue waters.",
+      link: '/place-info3'
     },
     {
-      title: "Mushroom Rocks",
-      description:
-        "The Mushroom Rocks are a geological wonder shaped by natural erosion, offering a unique sight for travelers.",
-      images: [
-        "/attractions_assets/mushroom/mushroomATT1.png",
-        "/attractions_assets/mushroom/mushroomATT2.jpg",
-        "/attractions_assets/mushroom/mushroomATT3.jpg",
-      ],
-      link: "/places/attractions/mushroom",
+      name: "Tongo Point",
+      image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/16/75/87/3f/coral-garden-of-tongo.jpg",
+      description: "A great snorkeling spot with vibrant coral reefs and rich marine biodiversity.",
+      link: '/place-info4'
     },
     {
-      title: "Basdaku White Beach",
-      description:
-        "Basdaku White Beach is a perfect getaway with its long stretch of white sand and calm turquoise waters.",
-      images: [
-        "/attractions_assets/basdaku/basdakuATT1.png",
-        "/attractions_assets/basdaku/basdakuATT2.jpg",
-        "/attractions_assets/basdaku/basdakuATT3.jpg",
-      ],
-      link: "/places/attractions/basdaku",
+      name: "Tumalog Falls",
+      image: "https://w5x6j5c9.delivery.rocketcdn.me/wp-content/uploads/2024/08/tumalog-falls.jpg",
+      description: "A breathtaking natural wonder featuring cascading waterfalls and a serene pool, surrounded by lush greenery.",
+      link: '/place-info5'
+    },
+    {
+      name: "Osmeña Peak",
+      image: "https://digitaltravelcouple.com/wp-content/uploads/2022/02/Osmena-peak-drone-1024x576.jpg",
+      description: "The highest point in Cebu, offering breathtaking panoramic views of the island.",
+      link: '/place-info6'
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = attractions.map((attraction) => attraction.images[0]);
-  const titles = attractions.map((attraction) => attraction.title);
-  const descriptions = attractions.map((attraction) => attraction.description);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // 5 seconds interval
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-    // Split attractions into rows of 3
-    const rows = [];
-    for (let i = 0; i < rowsToShow * 3 && i < attractions.length; i += 3) {
-      rows.push(attractions.slice(i, i + 3));
-    }
-  
-    // Handle hover state for individual carousel items
-    const handleMouseEnter = (rowIndex, index) => {
-      setHoveredIndexes((prev) => {
-        const newHovered = [...prev];
-        newHovered[rowIndex] = index; // Set hovered index for specific row
-        return newHovered;
-      });
-    };
-  
-    const handleMouseLeave = (rowIndex) => {
-      setHoveredIndexes((prev) => {
-        const newHovered = [...prev];
-        newHovered[rowIndex] = null; // Reset hovered state for specific row
-        return newHovered;
-      });
-    };
-  
-    // Handle "View More" button toggle
-    const toggleViewMore = (rowIndex, index) => {
-      setViewingMoreIndexes((prev) => {
-        const newIndexes = [...prev];
-        if (newIndexes[rowIndex] === index) {
-          newIndexes[rowIndex] = null; // Hide description if the same "View More" is clicked
-        } else {
-          newIndexes[rowIndex] = index; // Show description for the clicked item
-        }
-        return newIndexes;
-      });
-  
-      setExpandedIndex(expandedIndex === index ? null : index); // Toggle expansion
-    };
-  
-    // Reset hover and "viewing more" state when rowsToShow changes
-    useEffect(() => {
-      setHoveredIndexes([]); // Reset hover state when rowsToShow changes
-      setViewingMoreIndexes([]); // Reset "view more" state when rowsToShow changes
-    }, [rowsToShow]);
-  
-
   return (
-    <div className="relative bg-black">
-      {/* Image Slides */}
-      <div className="relative w-full overflow-hidden bg-black" style={{ height: "calc(100vh - 80px)" }}>
-        {images.map((src, index) => (
-          <div
-            key={index}
-            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 transform ${
-              index === currentIndex ? "opacity-100 zoom-in" : "opacity-0"
-            }`}
-          >
-            <img
-              src={src}
-              alt={`Slide ${index}`}
-              className="w-full h-full object-cover transition-transform duration-1000"
-            />
-            {/* Dark Filter */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
-          </div>
-        ))}
-
-        {/* Title, Description, and Placeholder Button */}
-        {attractions.map((attraction, index) => (
-  <div
-    key={index}
-    className={`absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center px-4 ${
-      index === currentIndex ? "opacity-100" : "opacity-0"
-    } transition-opacity duration-1000`}
-  >
-    <h1
-      className={`font-bold mb-4 transition-transform duration-1000 ${
-        index === currentIndex ? "slide-up-title" : ""
-      } text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl`}
-    >
-      {attraction.title}
-    </h1>
-
-    <p
-      className={`text-lg transition-transform duration-1000 delay-500 ${
-        index === currentIndex ? "slide-up-description" : ""
-      }`}
-    >
-      {attraction.description}
-    </p>
-
-    <button
-      className={`max-w-32 bg-transparent items-center justify-center flex border-2 border-gray-500 shadow-lg text-2xl text-nowrap text-white mt-12 px-24 p-4 hover:text-white duration-300 cursor-pointer active:scale-[0.98] ${
-        index === currentIndex ? "slide-up-button" : "opacity-0"
-      }`}
-      onClick={() => window.location.href = attraction.link} // Correctly sets the link
-    >
-      Learn More
-    </button>
-  </div>
-))}
-
-
-        {/* Keyframe Animations */}
-        <style jsx>{`
-          @keyframes zoomIn {
-            0% {
-              transform: scale(1);
-            }
-            100% {
-              transform: scale(1.1);
-            }
-          }
-
-          .zoom-in {
-            animation: zoomIn 6s ease-in-out;
-          }
-
-          @keyframes slideUpTitle {
-            0% {
-              transform: translateY(40px);
-              opacity: 0;
-            }
-            100% {
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-
-          @keyframes slideUpDescription {
-            0% {
-              transform: translateY(40px);
-              opacity: 0;
-            }
-            100% {
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-
-          @keyframes slideUpButton {
-            0% {
-              transform: translateY(20px);
-              opacity: 0.2;
-            }
-            100% {
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-
-          .slide-up-title {
-            animation: slideUpTitle 3s ease-in-out forwards;
-          }
-
-          .slide-up-description {
-            animation: slideUpDescription 4.5s ease-in-out forwards;
-          }
-
-          .slide-up-button {
-            animation: slideUpButton 4s ease-in-out forwards;
-          }
-        `}</style>
-      </div>
-
-      {/* Attraction Cards */}
-      <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white  bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/attractions_assets/underwater4.jpg')" }}>
-
-      {/* Header */}
-      <div className="text-center py-8">
-  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-    ATTRACTIONS
-  </h1>
-</div>
-<hr className="w-48 sm:w-64 md:w-80 lg:w-96 border-t-2 border-gray-300 mx-auto my-4" />
-
-
-
-
-{/* Attractions Cards */}
-<div className="relative container mx-auto px-5 py-4">
-  {rows.map((row, rowIndex) => (
-    <div key={rowIndex} className={`flex flex-wrap justify-center gap-6  ${rowIndex > 0 ? "mt-6" : ""}`}>
-      {row.map((attraction, index) => (
-        <div
-          key={index}
-          className={`relative rounded-3xl shadow-xl w-full sm:w-96 md:w-80 lg:w-[400px] min-h-[400px] max-h-[500px] flex flex-col bg-gray-900
-            transform transition-all duration-500 ease-in-out
-            ${hoveredIndexes[rowIndex] === index ? "scale-105" : "scale-100"}
-            ${expandedIndex === index ? "expanded" : ""}
-            hover:bg-gray-900 hover:shadow-2xl hover:shadow-sky-400`}
-          onMouseEnter={() => handleMouseEnter(rowIndex, index)}
-          onMouseLeave={() => handleMouseLeave(rowIndex)}
-        >
-          {/* Image/Description Section */}
-          <div className="w-full h-full min-h-[300px] max-h-[600px] overflow-hidden rounded-t-3xl pb-5">
-            {viewingMoreIndexes[rowIndex] === index ? (
-              <div className="text-white text-center flex items-center justify-center h-full">
-                <p>{attraction.description}</p>
-              </div>
-            ) : (
-              <Swiper
-                key={`sub-swiper-${index}`}
-                slidesPerView={1}
-                loop
-                autoplay={{ delay: 3000 }}
-                className="w-full h-full"
-              >
-                {attraction.images.map((image, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="w-full h-full">
-                      <Image
-                        src={image}
-                        alt={attraction.title}
-                        width={256}
-                        height={192}
-                        className="object-cover w-full h-full rounded-lg"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            )}
-          </div>
-
-          {/* Title and View More Button */}
-          <div className="flex items-center justify-evenly p-2 text-white space-x-2 -my-1 bg-gray-900">
-  <div>
-    <h3 className="text-xl font-bold">{attraction.title}</h3>
-    <div className="flex items-center mt-2.5 mb-5">
-      <div className="flex items-center space-x-1 rtl:space-x-reverse">
-        <svg
-          className="w-4 h-4 text-yellow-300"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 22 20"
-        >
-          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg
-          className="w-4 h-4 text-yellow-300"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 22 20"
-        >
-          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg
-          className="w-4 h-4 text-yellow-300"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 22 20"
-        >
-          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg
-          className="w-4 h-4 text-yellow-300"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 22 20"
-        >
-          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg
-          className="w-4 h-4 text-yellow-300"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 22 20"
-        >
-          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        {/* Repeat the SVG as required */}
-        {/* <svg
-          className="w-4 h-4 text-gray-200 dark:text-gray-600"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 22 20"
-        >
-          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg> */}
-      </div>
-      <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-        5.0
-      </span>
-    </div>
-  </div>
-  <button
-    className="btn glass text-white"
-    onClick={() => toggleViewMore(rowIndex, index)}
-  >
-    {viewingMoreIndexes[rowIndex] === index ? "Hide" : "View More"}
-  </button>
-</div>
-
-          {/* More Details Link */}
-          <div className="flex justify-center p-3">
-            <a
-              href={attraction.link}
-              className="btn btn-outline text-white w-full text-base"
-            >
-              More details about {attraction.title}
-            </a>
-          </div>
+    <div className="bg-gray-50 min-h-screen">
+      {/* Header Section */}
+      <header
+        className="bg-gray-700 text-white py-24 bg-cover bg-center"
+        style={{ backgroundImage: "url('place_assets/place_bg.png')" }}
+      >
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl font-bold">Attractions of Moalboal</h1>
+          <p className="mt-4 text-lg">Discover the must-see sights and natural wonders of Moalboal!</p>
         </div>
-      ))}
-    </div>
-  ))}
+      </header>
 
-  {/* Show More / Show Less Button */}
-  <div className="text-center mt-16 mb-20">
-    <button
-      className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-4 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
-      onClick={() =>
-        setRowsToShow((prevRows) =>
-          prevRows * 3 >= attractions.length ? 1 : prevRows + 1
-        )
-      }
-    >
-      {rowsToShow * 3 >= attractions.length ? "SHOW LESS" : "SEE MORE ATTRACTIONS"}
-      <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-        <div className="relative h-full w-10 bg-white/20"></div>
+      <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
+
+      {/* Moalboal Attractions Grid */}
+      <div className="mx-6 lg:mx-24 py-12">
+        <h2 className="text-3xl font-bold text-center mb-8">Top Attractions in Moalboal</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {moalboalAttractions.map((attraction, idx) => (
+            <div
+              key={idx}
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
+            >
+              <img
+                src={attraction.image}
+                alt={attraction.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">{attraction.name}</h3>
+                <p className="text-gray-600 text-sm">{attraction.description}</p>
+                <a
+                    href={attraction.link}
+                    className="bg-gray-700 text-white px-4 py-4 rounded-lg w-full hover:bg-gray-100 hover:text-black transition duration-200 mt-4 inline-block text-center"
+                  >
+                    View More.
+                  </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </button>
-  </div>
-</div>
 
-
-
+      {/* <h2 className="text-3xl font-bold text-center mb-8 mt-10">Popular Attractions</h2>
+      <PopularAttractionsSlider/> */}
 
 
       </div>
 
+      {/* Scroll-to-Top Button */}
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          className="z-10 fixed bottom-16 right-6 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
+        >
+          <ChevronUpIcon className="h-6 w-6" />
+        </button>
+      )}
     </div>
-
-
   );
-  
-  
-  
 };
 
-export default Slideshow;
+export default MoalboalPage;

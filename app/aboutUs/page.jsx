@@ -35,25 +35,83 @@ const AboutMoalboal = () => {
       </div>
 
       <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
-      {/* About Moalboal Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">The Municipality of Moalboal</h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-10">
-            Nestled on the southwestern coast of Cebu, Moalboal is a haven for travelers seeking stunning landscapes and vibrant underwater life. With its warm, welcoming community and rich cultural traditions, it stands as one of the province's crown jewels.
-          </p>
 
-          {/* Facts Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {facts.map((fact, index) => (
-              <div
-                key={index}
-                className="card bg-white shadow-lg rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 hover:text-white transform hover:scale-105"
-              >
-                <h3 className="text-xl font-bold">{fact.title}</h3>
-                <p className="mt-4">{fact.description}</p>
-              </div>
-            ))}
+      <section className="py-16 bg-white">
+  <div className="container mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold mb-8">The Municipality of Moalboal</h2>
+    <p className="text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+    Nestled on the southwestern coast of Cebu, Moalboal is a haven for travelers seeking stunning landscapes and vibrant underwater life. With its warm, welcoming community and rich cultural traditions, it stands as one of the province's crown jewels.
+    </p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="card bg-white shadow-lg hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden">
+        <img
+          src="https://jonathanlee.org/media/Moalboal-statue.jpg"
+          alt="Origin"
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="text-2xl font-semibold mb-3">Origin of the Name</h3>
+          <p className="text-gray-700">
+          The name "Moalboal" is believed to have come from the Cebuano words "bocal-bocal," referring to the bubbling springs found in the area. Over time, it evolved into "Moalboal.
+          </p>
+        </div>
+      </div>
+      <div className="card bg-white shadow-lg hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden">
+        <img
+          src="https://wheretostayin.city/wp-content/uploads/2024/07/Moalboal1.jpg"
+          alt="heritage"
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="text-2xl font-semibold mb-3">Rich History</h3>
+          <p className="text-gray-700">
+          Moalboal was established as a municipality in the late 19th century. It has grown into a vibrant community while preserving its cultural heritage.
+          </p>
+        </div>
+      </div>
+      <div className="card bg-white shadow-lg hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden">
+        <img
+          src="https://media.istockphoto.com/id/539675480/photo/tropical-fish-and-turtle.jpg?s=612x612&w=0&k=20&c=Zzayvg3Gv9xGuenrKjxMkJ9XIKXcJLlvAgn_LPdFijc="
+          alt="biodiversity"
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="text-2xl font-semibold mb-3">Marine Biodiversity</h3>
+          <p className="text-gray-700">
+          The town is renowned for its marine ecosystem, including the world-famous Sardine Run and the diverse coral reefs of Pescador Island.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+          {/* Highlights Section */}
+          <section className="bg-gray-100 py-10 px-6">
+        <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+          {/* Left: Image */}
+          <div className="md:w-1/2">
+            <img
+              src="about_assets/municipal_moalboal.svg"
+              alt="Moalboal Municipality Hall"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          {/* Right: Text and Logo */}
+          <div className="md:w-1/2 p-6 md:p-10">
+            <div className="flex items-center mb-4">
+              <img
+                src="about_assets/logo_local_moalboal.png"
+                alt="Logo"
+                className="w-16 h-16 object-contain mr-4"
+              />
+              <h2 className="text-2xl md:text-4xl font-bold text-white">
+                Moalboal Municipality
+              </h2>
+            </div>
+            <p className="text-white text-sm md:text-base leading-relaxed">
+              The Moalboal Municipality Hall - LGU is a cornerstone of governance, dedicated to fostering growth, sustainability, and community development. It inspires residents and visitors alike to collaborate in showcasing the natural beauty, rich culture, and vibrant spirit of Moalboal to the world.
+            </p>
           </div>
         </div>
       </section>
@@ -97,36 +155,6 @@ const AboutMoalboal = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights Section */}
-      <section className="bg-gray-100 py-10 px-6">
-        <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-          {/* Left: Image */}
-          <div className="md:w-1/2">
-            <img
-              src="about_assets/municipal_moalboal.svg"
-              alt="Moalboal Municipality Hall"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          {/* Right: Text and Logo */}
-          <div className="md:w-1/2 p-6 md:p-10">
-            <div className="flex items-center mb-4">
-              <img
-                src="about_assets/logo_local_moalboal.png"
-                alt="Logo"
-                className="w-16 h-16 object-contain mr-4"
-              />
-              <h2 className="text-2xl md:text-4xl font-bold text-white">
-                Moalboal Municipality
-              </h2>
-            </div>
-            <p className="text-white text-sm md:text-base leading-relaxed">
-              The Moalboal Municipality Hall - LGU is a cornerstone of governance, dedicated to fostering growth, sustainability, and community development. It inspires residents and visitors alike to collaborate in showcasing the natural beauty, rich culture, and vibrant spirit of Moalboal to the world.
-            </p>
           </div>
         </div>
       </section>

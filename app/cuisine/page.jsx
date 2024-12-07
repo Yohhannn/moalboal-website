@@ -121,7 +121,7 @@ const MoalboalPage = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
       <header
         className="bg-gray-700 text-white py-24 bg-cover bg-center"
@@ -137,7 +137,7 @@ const MoalboalPage = () => {
 
       {/* Food Moalboal Cuisine Grid */}
       <div className="mx-6 lg:mx-24 py-12">
-        <h2 className="text-3xl font-bold text-center border-gray-200 border-b-2 pb-6 mb-6">Local Delicacies of Moalboal</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">Local Delicacies of Moalboal</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {moalboalCuisines.map((cuisine, idx) => (
             <div
@@ -147,7 +147,7 @@ const MoalboalPage = () => {
               <img
                 src={cuisine.image}
                 alt={cuisine.name}
-                className="w-full h-52 object-cover"
+                className="w-full h-48 object-cover"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{cuisine.name}</h3>
@@ -157,9 +157,9 @@ const MoalboalPage = () => {
           ))}
         </div>
       </div>
-      <h2 className="text-2xl md:text-3xl font-bold text-center mt-10 border-gray-200 border-b-2 pb-6">Local Favorites</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-10">Local Favorites</h2>
       <PopularCuisineSlider/>
-      <h2 className="text-2xl md:text-3xl font-bold text-center mt-10 border-gray-200 border-b-2 pb-6 ">Popular Local Restaurants</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-20">Popular Local Restaurants</h2>
       <PopularRestoSlider/>
       </div>
 
@@ -167,9 +167,9 @@ const MoalboalPage = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="z-10 fixed bottom-12 lg:bottom-16 right-3 md:right-6 p-2 md:p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
+          className="z-10 fixed bottom-16 right-6 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
         >
-          <ChevronUpIcon className="h-5 w-5 lg:h-6 lg:w-6" />
+          <ChevronUpIcon className="h-6 w-6" />
         </button>
       )}
     </div>

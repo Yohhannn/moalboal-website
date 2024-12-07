@@ -18,13 +18,13 @@ const Lantaw = () => {
           />
         </div>
         <h2 className="text-2xl font-bold text-gray-800 mt-4">
-        Tan-aw Restaurant
+        Lantaw Restaurant
         </h2>
         <p className="text-gray-600 mt-2">
         Location: Saavedra, Moalboal, Cebu
         </p>
         <p className="text-gray-700 mt-4">
-        Perched above the crystal-clear waters, Tan-aw Restaurant offers a serene dining experience with panoramic ocean views. Enjoy a mix of traditional Filipino and fresh seafood dishes, perfectly paired with the gentle sea breeze.
+        Perched above the crystal-clear waters, Lantaw Restaurant offers a serene dining experience with panoramic ocean views. Enjoy a mix of traditional Filipino and fresh seafood dishes, perfectly paired with the gentle sea breeze.
         </p>
       </div>
 
