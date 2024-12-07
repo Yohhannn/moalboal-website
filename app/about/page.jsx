@@ -50,6 +50,7 @@ const AboutUs = () => {
         
       </div>
 
+      <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
       {/* About the Black Mavericks */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-6 text-center">
@@ -103,6 +104,7 @@ const AboutUs = () => {
         </div>
       </div>
     </section>
+    </div>
 
       {/* Footer */}
       <footer className="bg-gray-800 py-6 text-white text-center">
