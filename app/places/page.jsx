@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from "react";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
-import PopularAttractionsSlider from "./PopularAttractionsSlider";
+import "animate.css";  // Import animate.css
 
 const MoalboalPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,7 +63,7 @@ const MoalboalPage = () => {
     <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
       <header
-        className="bg-gray-700 text-white py-24 bg-cover bg-center"
+        className="bg-gray-700 text-white py-24 bg-cover bg-center animate__animated animate__fadeIn"
         style={{ backgroundImage: "url('place_assets/place_bg.png')" }}
       >
         <div className="container mx-auto text-center">
@@ -73,51 +73,45 @@ const MoalboalPage = () => {
       </header>
 
       <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
-
-      {/* Moalboal Attractions Grid */}
-      <div className="mx-6 lg:mx-24 py-12">
-        <h2 className="text-3xl font-bold text-center mb-8">Top Attractions in Moalboal</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {moalboalAttractions.map((attraction, idx) => (
-            <div
-              key={idx}
-              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
-            >
-              <img
-                src={attraction.image}
-                alt={attraction.name}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{attraction.name}</h3>
-                <p className="text-gray-600 text-sm">{attraction.description}</p>
-                <a
+        {/* Moalboal Attractions Grid */}
+        <div className="mx-6 lg:mx-24 py-12 animate__animated animate__fadeIn">
+          <h2 className="text-3xl font-bold text-center mb-8">Top Attractions in Moalboal</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {moalboalAttractions.map((attraction, idx) => (
+              <div
+                key={idx}
+                className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 animate__animated animate__fadeIn"
+              >
+                <img
+                  src={attraction.image}
+                  alt={attraction.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold mb-2">{attraction.name}</h3>
+                  <p className="text-gray-600 text-sm">{attraction.description}</p>
+                  <a
                     href={attraction.link}
                     className="bg-gray-700 text-white px-4 py-4 rounded-lg w-full hover:bg-gray-100 hover:text-black transition duration-200 mt-4 inline-block text-center"
                   >
                     View More.
                   </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        {/* Scroll-to-Top Button */}
+        {isVisible && (
+          <button
+            onClick={scrollToTop}
+            className="z-10 fixed bottom-16 right-6 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
+          >
+            <ChevronUpIcon className="h-6 w-6" />
+          </button>
+        )}
       </div>
-
-      {/* <h2 className="text-3xl font-bold text-center mb-8 mt-10">Popular Attractions</h2>
-      <PopularAttractionsSlider/> */}
-
-
-      </div>
-
-      {/* Scroll-to-Top Button */}
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="z-10 fixed bottom-16 right-6 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
-        >
-          <ChevronUpIcon className="h-6 w-6" />
-        </button>
-      )}
     </div>
   );
 };

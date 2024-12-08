@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import PopularCuisineSlider from "./PopularCuisineSlider";
 import PopularRestoSlider from "./PopularRestoSlider";
+import "animate.css";  // Import animate.css
 
 const MoalboalPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -104,7 +105,7 @@ const MoalboalPage = () => {
         description:
           "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies. ",
       },
-      {
+    {
         name: "Shaka",
         link: "/cuisine-resto8",
         image: "https://images.happycow.net/venues/1024/15/17/hcmp151750_2307523.jpeg",
@@ -124,7 +125,7 @@ const MoalboalPage = () => {
     <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
       <header
-        className="bg-gray-700 text-white py-24 bg-cover bg-center"
+        className="bg-gray-700 text-white py-24 bg-cover bg-center animate__animated animate__fadeIn"
         style={{ backgroundImage: "url('cuisine_assets/cuisine_bg.png')" }}
       >
         <div className="container mx-auto text-center">
@@ -136,13 +137,13 @@ const MoalboalPage = () => {
       <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
 
       {/* Food Moalboal Cuisine Grid */}
-      <div className="mx-6 lg:mx-24 py-12">
+      <div className="mx-6 lg:mx-24 py-12 animate__animated animate__fadeIn">
         <h2 className="text-3xl font-bold text-center mb-8">Local Delicacies of Moalboal</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {moalboalCuisines.map((cuisine, idx) => (
             <div
               key={idx}
-              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 animate__animated animate__fadeIn"
             >
               <img
                 src={cuisine.image}
@@ -157,9 +158,10 @@ const MoalboalPage = () => {
           ))}
         </div>
       </div>
-      <h2 className="text-3xl font-bold text-center mb-8 mt-10">Local Favorites</h2>
+
+      <h2 className="text-3xl font-bold text-center mb-8 mt-10 animate__animated animate__fadeIn">Local Favorites</h2>
       <PopularCuisineSlider/>
-      <h2 className="text-3xl font-bold text-center mb-8 mt-20">Popular Local Restaurants</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-20 animate__animated animate__fadeIn">Popular Local Restaurants</h2>
       <PopularRestoSlider/>
       </div>
 
