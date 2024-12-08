@@ -6,23 +6,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
     "/home/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/home/page.css",
       "static/chunks/app/home/page.js"
-    ],
-    "/places/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/places/page.css",
-      "static/chunks/app/places/page.js"
     ],
     "/cuisine/page": [
       "static/chunks/webpack.js",
@@ -30,15 +18,23 @@
       "static/css/app/cuisine/page.css",
       "static/chunks/app/cuisine/page.js"
     ],
+    "/places/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/places/page.css",
+      "static/chunks/app/places/page.js"
+    ],
     "/events/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/events/page.css",
       "static/chunks/app/events/page.js"
     ],
-    "/contacts/page": [
+    "/aboutUs/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contacts/page.js"
+      "static/css/app/aboutUs/page.css",
+      "static/chunks/app/aboutUs/page.js"
     ]
   }
 }
