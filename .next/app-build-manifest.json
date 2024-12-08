@@ -15,13 +15,30 @@
     "/home/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/home/page.css",
       "static/chunks/app/home/page.js"
+    ],
+    "/places/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/places/page.css",
+      "static/chunks/app/places/page.js"
     ],
     "/cuisine/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/cuisine/page.css",
       "static/chunks/app/cuisine/page.js"
+    ],
+    "/events/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/events/page.js"
+    ],
+    "/contacts/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contacts/page.js"
     ]
   }
 }

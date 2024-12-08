@@ -1,4 +1,4 @@
-// File: C:\Users\Ian Jhon\Desktop\New Moalboal\moalboal-website\app\layout.jsx
+// File: F:\moalboal\moalboal-website\app\layout.jsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
