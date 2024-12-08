@@ -1,4 +1,4 @@
-// File: C:\Users\Ian Jhon\Desktop\New Moalboal\moalboal-website\app\cuisine\page.jsx
+// File: F:\moalboal\moalboal-website\app\cuisine\page.jsx
 import * as entry from '../../../../app/cuisine/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

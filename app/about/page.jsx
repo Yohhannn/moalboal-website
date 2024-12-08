@@ -1,4 +1,5 @@
 import React from 'react';
+import 'animate.css';
 
 const AboutUs = () => {
   const teamMembers = [
@@ -33,12 +34,13 @@ const AboutUs = () => {
       bio: 'Roberto focuses on gathering data, researching trends, and ensuring that the information provided about Moalboal is accurate and up-to-date.',
     },
   ];
-  
 
   return (
-    <div className="bg-gray-100">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center bg-cover bg-center" style={{ backgroundImage: "url('about_assets/background_school.svg')" }}>
+    <div className="bg-gray-100 min-h-screen animate__animated animate__fadeIn">
+      <div
+        className="bg-gradient-to-t from-gray-600 to-gray-700 text-white py-24 text-center bg-cover bg-center"
+        style={{ backgroundImage: "url('about_assets/background_school.svg')" }}
+      >
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold mb-4">About Our Team</h1>
           <p className="text-lg max-w-2xl mx-auto">
@@ -46,67 +48,64 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div>
-        
-      </div>
 
       <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
-      {/* About the Black Mavericks */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Meet the Black Mavericks</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-10">
-            Dedicated to promoting Moalboal as a must-visit destination, we are a group of five mavericks specializing in creative storytelling, research, and layouts.
-          </p>
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold mb-6">Meet the Black Mavericks</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto mb-10">
+              Dedicated to promoting Moalboal as a must-visit destination, we are a group of five mavericks specializing in creative storytelling, research, and layouts.
+            </p>
 
-          {/* Team Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="card bg-white shadow-lg rounded-lg p-6 transition-all duration-300 hover:bg-gray-700 hover:text-gray-100">
-                <img src={member.img} alt={member.name} className="w-36 h-36 rounded-full mx-auto mb-4 object-cover border-solid border-2 border-white" />
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className=" font-semibold">{member.role}</p>
-                <p className=" mt-4 text-md">{member.bio}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {teamMembers.map((member, index) => (
+                <div
+                  key={index}
+                  className="card bg-white shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105 animate__animated animate__fadeIn"
+                >
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-36 h-36 rounded-full mx-auto mb-4 object-cover border-solid border-2 border-white"
+                  />
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="font-semibold">{member.role}</p>
+                  <p className="mt-4 text-md">{member.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gray-100 py-10 px-6 animate__animated animate__fadeIn">
+          <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+            <div className="md:w-1/2">
+              <img
+                src="about_assets/school_img.svg"
+                alt="School"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            <div className="md:w-1/2 p-6 md:p-10">
+              <div className="flex items-center mb-4">
+                <img
+                  src="about_assets/ctulogoicon.png"
+                  alt="School Logo"
+                  className="w-16 h-16 object-contain mr-4"
+                />
+                <h2 className="text-2xl font-bold text-white">
+                  CEBU TECHNOLOGICAL UNIVERSITY - <i>MAIN</i>
+                </h2>
               </div>
-            ))}
+              <p className="text-white text-md leading-relaxed">
+                CTU-Main is a premier institution dedicated to fostering innovation, creativity, and excellence. Our students are inspired to apply their skills to showcase the beauty of Moalboal and beyond.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-gray-100 py-10 px-6">
-      <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        {/* Left: Image */}
-        <div className="md:w-1/2">
-          <img
-            src="about_assets/school_img.svg" 
-            alt="School"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-
-        {/* Right: Text and Logo */}
-        <div className="md:w-1/2 p-6 md:p-10">
-          <div className="flex items-center mb-4">
-            <img
-              src="about_assets/ctulogoicon.png" 
-              alt="School Logo"
-              className="w-16 h-16 object-contain mr-4"
-            />
-            <h2 className="text-2xl font-bold text-white">
-              CEBU TECHNOLOGICAL UNIVERSITY - <i>MAIN</i>
-            </h2>
-          </div>
-          <p className="text-white text-md leading-relaxed">
-            CTU-Main is a premier institution dedicated to fostering
-            innovation, creativity, and excellence. Our students are inspired
-            to apply their skills to showcase the beauty of Moalboal and beyond.
-          </p>
-        </div>
+        </section>
       </div>
-    </section>
-    </div>
 
-      {/* Footer */}
       <footer className="bg-gray-800 py-6 text-white text-center">
         <p>&copy; 2024 Black Mavericks. All Rights Reserved.</p>
       </footer>

@@ -103,7 +103,7 @@ const PopularRestoSlider = () => {
               spaceBetween: 6,
             },
             500: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 12,
             },
             1000: {
@@ -111,7 +111,7 @@ const PopularRestoSlider = () => {
               spaceBetween: 15,
             },
             1200: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 15,
             },
           }}

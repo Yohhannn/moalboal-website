@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/">
-            <h1 className="py-2 px-4 text-2xl font-bold cursor-pointer hover:text-yellow-400">
+            <h1 className="py-2 px-4 text-2xl font-bold cursor-pointer hover:text-yellow-400 transform transition-transform hover:scale-110">
               <img
                 src="/header_assets/MOALBOAL_TEXT.svg"
                 alt="Moalboal Logo"
@@ -75,39 +75,39 @@ const Header = () => {
               }`}
             >
               <li>
-                <Link href="/home" className="hover:text-yellow-400 transition" onClick={closeMenu}>
+                <Link href="/home" className="hover:text-yellow-400 transform transition-transform hover:scale-105" onClick={closeMenu}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/aboutUs" className="hover:text-yellow-400 transition" onClick={closeMenu}>
+                <Link href="/aboutUs" className="hover:text-yellow-400 transform transition-transform hover:scale-105" onClick={closeMenu}>
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/places" className="hover:text-yellow-400 transition" onClick={closeMenu}>
+                <Link href="/places" className="hover:text-yellow-400 transform transition-transform hover:scale-105" onClick={closeMenu}>
                   Places
                 </Link>
               </li>
               <li>
-                <Link href="/cuisine" className="hover:text-yellow-400 transition" onClick={closeMenu}>
+                <Link href="/cuisine" className="hover:text-yellow-400 transform transition-transform hover:scale-105" onClick={closeMenu}>
                   Cuisine
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="hover:text-yellow-400 transition" onClick={closeMenu}>
+                <Link href="/events" className="hover:text-yellow-400 transform transition-transform hover:scale-105" onClick={closeMenu}>
                   Events
                 </Link>
               </li>
               <li>
-                <Link href="/contacts" className="hover:text-yellow-400 transition" onClick={closeMenu}>
+                <Link href="/contacts" className="hover:text-yellow-400 transform transition-transform hover:scale-105" onClick={closeMenu}>
                   Contact
                 </Link>
               </li>
             </ul>
 
             {/* Desktop Links */}
-            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transition">
+            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transform transition-transform hover:scale-105">
               <Link href="/home" className="flex flex-col items-center">
                 <div className="w-6 h-6 bg-gray-800 rounded-full mb-1 md:block">
                   <img src="header_assets/i_home1.svg" alt="Home" />
@@ -116,7 +116,7 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transition">
+            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transform transition-transform hover:scale-105">
               <Link href="/aboutUs" className="flex flex-col items-center">
                 <div className="w-6 h-6 bg-gray-800 rounded-full mb-1 md:block">
                   <img src="about_assets/about_icon_tag_place.svg" alt="About Us" />
@@ -125,7 +125,7 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transition">
+            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transform transition-transform hover:scale-105">
               <Link href="/places" className="flex flex-col items-center">
                 <div className="w-6 h-6 bg-gray-800 rounded-full mb-1 md:block">
                   <img src="header_assets/i_place.svg" alt="Places" />
@@ -134,7 +134,7 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transition">
+            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transform transition-transform hover:scale-105">
               <Link href="/cuisine" className="flex flex-col items-center">
                 <div className="w-6 h-6 bg-gray-800 rounded-full mb-1 md:block">
                   <img src="header_assets/i_cuisine.svg" alt="Cuisine" />
@@ -143,7 +143,7 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transition">
+            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transform transition-transform hover:scale-105">
               <Link href="/events" className="flex flex-col items-center">
                 <div className="w-6 h-6 bg-gray-800 rounded-full mb-1 md:block">
                   <img src="header_assets/i_festival.svg" alt="Events" />
@@ -152,7 +152,7 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transition">
+            <li className="hidden md:flex flex-col items-center text-sm hover:text-yellow-400 transform transition-transform hover:scale-105">
               <Link href="/contacts" className="flex flex-col items-center">
                 <div className="w-6 h-6 bg-gray-800 rounded-full mb-1 md:block">
                   <img src="header_assets/i_contact.svg" alt="Contact" />
