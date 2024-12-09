@@ -24,7 +24,7 @@ const Kugita = () => {
         Location: Panagsama Beach, Moalboal, Cebu
         </p>
         <p className="text-gray-700 mt-4">
-        A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies. With its emphasis on charcoal grilling, it offers a smoky, flavorful twist to every dish, providing a memorable dining experience for those craving fresh, high-quality seafood right by the ocean.
+        Kugita Seafood and Charcoal Grill is a proudly Filipino eco-friendly restaurant that brings together the finest flavors of fresh seafood, premium meats, and expertly crafted sushi. Whether you're craving indulgent barbecue, fresh catch of the day, or vibrant sushi rolls, they provide an unforgettable dining experience in a warm and inviting ambiance.
         </p>
       </div>
 

@@ -56,7 +56,7 @@ const PopularCuisineSlider = () => {
   }, []);
 
   return (
-    <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
+    <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white rounded-lg p-6">
     <div className="relative w-full h-auto">
       <Swiper
         ref={swiperRef}
@@ -87,12 +87,12 @@ const PopularCuisineSlider = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="flex-shrink-0 min-h-[150px] h-[300px] w-full md:h-[400px] bg-white rounded overflow-hidden shadow-lg lg:transform lg:transition-transform lg:duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl mb-10 md:mb-12">
+            <div className="flex-shrink-0 h-[400px] w-full md:h-[400px] bg-white rounded overflow-hidden shadow-lg transform lg:transition-transform lg:duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl mb-10">
               <div
-                className="absolute inset-0 bg-cover bg-center shadow-lg overflow-hidden rounded-lg"
+                className="absolute inset-0 bg-cover bg-center overflow-hidden rounded-lg"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
-              <div className="absolute rounded-lg inset-0 bg-black opacity-10 hover:opacity-50"></div>
+              <div className="absolute rounded-lg inset-0 bg-black opacity-10 md:hover:opacity-50"></div>
               <button className="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md">
                 ❤️
               </button>

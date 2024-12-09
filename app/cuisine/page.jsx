@@ -55,72 +55,6 @@ const MoalboalPage = () => {
     },
   ];
 
-  const moalboalResto = [
-    {
-      name: "Ven'z Kitchen",
-      link: "/cuisine-resto1",
-      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/c8/10/0f/with-rita-and-sven.jpg?w=800&h=400&s=1",
-      description:
-        "Known for its home-cooked Filipino meals and warm hospitality, Ven'z Kitchen is a favorite spot for locals and tourists alike.",
-    },
-    {
-      name: "Lantaw Restaurant",
-      link: "/cuisine-resto2",
-      image: "https://www.phtourguide.com/wp-content/uploads/2012/11/Lantaw-Floating-Native-Restaurant.jpg",
-      description:
-        "Enjoy stunning ocean views paired with a variety of Filipino and seafood dishes at this scenic restaurant.",
-    },
-    {
-      name: "The Three Bears",
-      link: "/cuisine-resto3",
-      image: "https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL01VREgySzlyUkZtQ2tCR25PbFU2c0EiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0=",
-      description:
-        "A family-friendly café offering hearty breakfast options, pastries, and coffee to kickstart your Moalboal adventure.",
-    },
-    {
-      name: "Blue Abyss Dive Resort Restaurant",
-      link: "/cuisine-resto4",
-      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/0d/9a/9d/the-blue-abyss-dive-resort.jpg?w=700&h=-1&s=1",
-      description:
-        "Perfect for divers, this spot serves a range of dishes with a focus on fresh, local ingredients and a relaxing vibe.",
-    },
-    {
-        name: "The Pleasure Principle Resto-Bar",
-        link: "/cuisine-resto5",
-        image: "https://cebutrip.net/files/becf099243979b0fca369a059fd0a1bf.jpg",
-        description:
-          "A cozy spot offering a mix of international and local dishes, along with refreshing cocktails and beachside ambiance.",
-      },
-    {
-      name: "Hungry Monkeys Restaurant",
-      link: "/cuisine-resto6",
-      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/50/49/58/your-view-upstairs.jpg?w=900&h=500&s=1",
-      description:
-        "A quirky bar and grill serving delicious barbecue and signature cocktails, making it a must-visit for food and fun.",
-    },
-    {
-        name: "Kugita Seafood & Charcoal Grill",
-        link: "/cuisine-resto7",
-        image: "https://www.nopostcode.com/wp-content/uploads/2021/01/Kugita-Moalboal-4-1024x682.jpg",
-        description:
-          "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies. ",
-      },
-    {
-        name: "Shaka",
-        link: "/cuisine-resto8",
-        image: "https://images.happycow.net/venues/1024/15/17/hcmp151750_2307523.jpeg",
-        description:
-          " A tropical haven offering fresh, healthy bowls, smoothies, and signature dishes with a laid-back island vibe.",
-      },
-        {
-        name: "Besty's Grill and Resto Bar",
-        link: "/cuisine-resto9",
-        image: "https://media-cdn.tripadvisor.com/media/photo-s/1a/02/16/d4/dining-area.jpg",
-        description:
-          "A cozy beachfront restaurant offering a mix of flavorful Filipino dishes and international favorites. ",
-      },
-  ];
-
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
@@ -137,13 +71,13 @@ const MoalboalPage = () => {
       <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
 
       {/* Food Moalboal Cuisine Grid */}
-      <div className="mx-6 lg:mx-24 py-12 animate__animated animate__fadeIn">
-        <h2 className="text-3xl font-bold text-center mb-8">Local Delicacies of Moalboal</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-center border-gray-200 border-b-2 pb-6 mb-6 pt-12">Local Delicacies of Moalboal</h2>
+      <div className="mx-6 lg:mx-24 pb-10 lg:pb-16 animate__animated animate__fadeIn">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {moalboalCuisines.map((cuisine, idx) => (
             <div
               key={idx}
-              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 animate__animated animate__fadeIn"
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform md:hover:scale-105 animate__animated animate__fadeIn"
             >
               <img
                 src={cuisine.image}
@@ -159,9 +93,9 @@ const MoalboalPage = () => {
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-center mb-8 mt-10 animate__animated animate__fadeIn">Local Favorites</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-center mt-10 border-gray-200 border-b-2 pb-6 animate__animated animate__fadeIn">Local Favorites</h2>
       <PopularCuisineSlider/>
-      <h2 className="text-3xl font-bold text-center mb-8 mt-20 animate__animated animate__fadeIn">Popular Local Restaurants</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-center mt-10 border-gray-200 border-b-2 pb-6 animate__animated animate__fadeIn">Popular Local Restaurants</h2>
       <PopularRestoSlider/>
       </div>
 
@@ -169,9 +103,9 @@ const MoalboalPage = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="z-10 fixed bottom-16 right-6 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
+          className="z-10 fixed bottom-12 lg:bottom-16 right-3 md:right-6 p-2 md:p-3 rounded-full bg-blue-600 text-white hover:bg-blue-800 shadow-md transition"
         >
-          <ChevronUpIcon className="h-6 w-6" />
+          <ChevronUpIcon className="h-4 w-4 lg:h-6 lg:w-6" />
         </button>
       )}
     </div>

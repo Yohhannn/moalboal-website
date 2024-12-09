@@ -1,4 +1,4 @@
-// File: F:\moalboal\moalboal-website\app\events\page.jsx
+// File: C:\Users\Ian Jhon\Desktop\moalboalwebsite\moalboal-website\app\events\page.jsx
 import * as entry from '../../../../app/events/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
