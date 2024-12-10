@@ -16,11 +16,11 @@ const PopularRestoSlider = () => {
         "Known for its home-cooked Filipino meals and warm hospitality, Ven'z Kitchen is a favorite spot for locals and tourists alike.",
     },
     {
-      name: "Lantaw Restaurant",
+      name: "Tan-aw Restaurant",
       link: "/cuisine-resto2",
       image: "https://www.phtourguide.com/wp-content/uploads/2012/11/Lantaw-Floating-Native-Restaurant.jpg",
       description:
-        "Enjoy stunning ocean views paired with a variety of Filipino and seafood dishes at this scenic restaurant.",
+        "Enjoy stunning ocean views paired with a variety of delicious Filipino and seafood dishes at this scenic restaurant.",
     },
     {
       name: "The Three Bears",
@@ -48,14 +48,14 @@ const PopularRestoSlider = () => {
       link: "/cuisine-resto6",
       image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/50/49/58/your-view-upstairs.jpg?w=900&h=500&s=1",
       description:
-        "A quirky bar and grill serving delicious barbecue and signature cocktails, making it a must-visit for food and fun.",
+        "A cozy spot offering a blend of local and international dishes, refreshing cocktails, and a relaxing beachside ambiance..",
     },
     {
       name: "Kugita Seafood & Charcoal Grill",
       link: "/cuisine-resto7",
       image: "https://www.nopostcode.com/wp-content/uploads/2021/01/Kugita-Moalboal-4-1024x682.jpg",
       description:
-        "A seafood lover's paradise, Kugita specializes in freshly grilled fish, prawns, and other local delicacies.",
+        "Kugita Seafood and Charcoal Grill is a Filipino eco-friendly restaurant serving fresh seafood, premium meats, and sushi.",
     },
     {
       name: "Shaka",
@@ -65,11 +65,11 @@ const PopularRestoSlider = () => {
         "A tropical haven offering fresh, healthy bowls, smoothies, and signature dishes with a laid-back island vibe.",
     },
     {
-      name: "Besty's Grill and Resto Bar",
+      name: "Betsy's Grill and Resto Bar",
       link: "/cuisine-resto9",
       image: "https://media-cdn.tripadvisor.com/media/photo-s/1a/02/16/d4/dining-area.jpg",
       description:
-        "A cozy beachfront restaurant offering a mix of flavorful Filipino dishes and international favorites.",
+        "A quirky bar and grill serving delicious barbecue and signature cocktails, making it a must-visit for food and fun.",
     },
   ];
 
@@ -89,7 +89,7 @@ const PopularRestoSlider = () => {
   }, []);
 
   return (
-    <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white shadow-lg rounded-lg p-6">
+    <div className="max-w-8xl mx-auto 2xl:max-w-7xl bg-white rounded-lg p-6">
       <div className="relative w-full h-auto">
         <Swiper
           ref={swiperRef}
@@ -120,21 +120,21 @@ const PopularRestoSlider = () => {
         >
           {moalboalResto.map((place, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 mb-10 md:mb-12">
+              <div className="bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 mb-4 md:mb-8">
                 <img
                   src={place.image}
                   alt={place.name}
-                  className="w-full h-96 object-cover px-6 py-5"  
+                  className="w-full h-72 md:h-96 object-cover"  
                 />
 
-                <div className="p-6"> {/* Increased padding */}
-                  <h3 className="text-xl font-semibold mb-2">{place.name}</h3>
+                <div className=" p-4 md:p-6"> {/* Increased padding */}
+                  <h3 className="text-[16px] md:text-xl font-bold md:font-semibold mb-2">{place.name}</h3>
                   <p className="text-gray-600 text-sm">{place.description}</p>
                   <a
                     href={place.link}
                     className="bg-gray-700 text-white px-4 py-4 rounded-lg w-full hover:bg-gray-100 hover:text-black transition duration-200 mt-4 inline-block text-center"
                   >
-                    View More.
+                    View More
                   </a>
                 </div>
               </div>
